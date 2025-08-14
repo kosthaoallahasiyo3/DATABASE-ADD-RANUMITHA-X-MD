@@ -151,7 +151,14 @@ console.log("Connecting 🪄 RANUMITHA 🏮");
 conn.ev.on('creds.update', saveCreds)
 
   //==============================
-
+conn.ev.on('messages.update', async updates => {
+    for (const update of updates) {
+      if (update.update.message === null) {
+        console.log("Delete Detected:", JSON.stringify(update, null, 2));
+        await AntiDelete(conn, updates);
+      }
+    }
+  });
   
   //============================== 
 
