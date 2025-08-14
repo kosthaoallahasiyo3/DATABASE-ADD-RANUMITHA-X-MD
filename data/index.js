@@ -1,3 +1,5 @@
+const connectDB = require("./lib/mongodb");
+  connectDB();
 const { AntiDelDB,
     initializeAntiDeleteSettings,
     setAnti,
