@@ -64,7 +64,7 @@ const clearTempDir = () => {
   setInterval(clearTempDir, 5 * 60 * 1000);
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + "/auth_info_baileys/creds.json")) {
+if (!fs.existsSync(__dirname + "/sessions/creds.json")) {
   if (!config.SESSION_ID)
     return console.log("Please add your session to SESSION_ID env !!");
   const sessdata = config.SESSION_ID.replace("ranu~", '');
@@ -84,7 +84,7 @@ const port = process.env.PORT || 8000;
 //=============================================
 
 async function connectToWA() {
-   //mongo connect
+  //mongo connect
   const connectDB = require("./lib/mongodb");
   connectDB();
   //=======================
@@ -92,8 +92,9 @@ async function connectToWA() {
   const config = await readEnv();
   const prefix = config.PREFIX;
   //===========================
+
 	
-  console.log("Connecting 🪄 RANUMITHA 🏮");
+console.log("Connecting 🪄 RANUMITHA 🏮");
   const { state, saveCreds } = await useMultiFileAuthState(
     __dirname + "/sessions/"
   );
