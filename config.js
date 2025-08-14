@@ -6,9 +6,9 @@ function convertToBool(text, fault = "true") {
   return text === fault ? true : false;
 }
 module.exports = {
-SESSION_ID: process.env.SESSION_ID || "ranu~RuswWQra#67p3FyybdFRDjA5y5GoVxJS1PofKU8d42fVpMk0MWYM",
+SESSION_ID: process.env.SESSION_ID || "ranu~J6tG1QgJ#TbJPIcgVhgvRSMNm6x5ijdX7J5BfZIyc0r_pjfBG1XE",
 // add your Session Id (මුලට "ranu~")
-MONGODB: process.env.MONGODB || "",
+MONGODB: process.env.MONGODB || "mongodb://mongo:UygcgiRdTWBRrYEolSIoFDzuAujNAddc@yamabiko.proxy.rlwy.net:20756",
 // Enter your mongoDB public URL
 AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
 // make it true for auto recoding 
