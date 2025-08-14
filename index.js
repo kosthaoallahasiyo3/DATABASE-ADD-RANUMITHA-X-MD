@@ -41,7 +41,6 @@ const {
   const os = require('os')
   const Crypto = require('crypto')
   const path = require('path')
-  const prefix = config.PREFIX
 
 const ownerNumber = config.OWNER_NUM;
 
@@ -85,7 +84,16 @@ const port = process.env.PORT || 8000;
 //=============================================
 
 async function connectToWA() {
-console.log("Connecting 🪄 RANUMITHA 🏮");
+   //mongo connect
+  const connectDB = require("./lib/mongodb");
+  connectDB();
+  //=======================
+  const { readEnv } = require("./lib/database");
+  const config = await readEnv();
+  const prefix = config.PREFIX;
+  //===========================
+	
+  console.log("Connecting 🪄 RANUMITHA 🏮");
   const { state, saveCreds } = await useMultiFileAuthState(
     __dirname + "/sessions/"
   );
